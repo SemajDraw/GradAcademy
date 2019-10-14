@@ -1,0 +1,10 @@
+<label class="mr-2" for="size">Size: </label>
+<input class="form-control-range" id="size" type="range" min="0" max="19" [(ngModel)]="input" (change)="execute()">
+<div>
+  Height = {{height}}
+</div>
+
+<hr>
+
+<h2>Output</h2>
+<pre>{{output}}</pre>

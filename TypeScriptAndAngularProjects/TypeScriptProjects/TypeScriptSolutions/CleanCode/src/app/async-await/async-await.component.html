@@ -1,0 +1,24 @@
+<div>
+  <div>Total Items: {{count}}</div>
+  <div>
+    <button class='btn btn-primary mr-2'
+            [disabled]="isBusy"
+            (click)="prevPage()">Prev
+    </button>
+    Page Number: {{pageNumber + 1}}
+    <button class='btn btn-primary ml-2'
+            [disabled]="isBusy"
+            (click)="nextPage()">Next
+    </button>
+
+    <span *ngIf="isBusy" class="ml-2 fa fa-circle-o-notch fa-spin"></span>
+  </div>
+  <div *ngIf="error" class='alert alert-danger'>
+    {{error}}
+  </div>
+  <div>
+    <ol [start]="pageNumber * PAGE_SIZE + 1">
+      <li *ngFor="let movie of movies">{{movie}}</li>
+    </ol>
+  </div>
+</div>

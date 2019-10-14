@@ -1,0 +1,17 @@
+{
+  "name": "typescript-examples",
+  "version": "1.0.0",
+  "description": "Container of multiple language examples.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "3.5"
+  },
+  "dependencies": {
+    "systemjs": "^0.20.17"
+  }
+}
