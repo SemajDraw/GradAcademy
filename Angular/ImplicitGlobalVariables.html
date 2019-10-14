@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Implicit Global Variable</title>
+    <script>
+
+        var imAProperGLobalVariable = true
+        var myglobal = 789;
+        function foo() {
+            var myvar1 = 123;
+        }
+        function bar() {
+            // Implicit Global Variable
+            myvar2 = 456;
+            imNotAProperGLobalVariable = true
+        }
+
+        function demo() {
+            console.log(myglobal);
+            foo();
+            try {
+                console.log(myvar1);
+            }catch (e) {
+                console.log("No such variable")
+            }
+            bar();
+            console.log(myvar2);
+            console.log("Can see the explicit global variable? " + imAProperGLobalVariable)
+            console.log("Can see the implicit global variable? " + imNotAProperGLobalVariable)
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>
