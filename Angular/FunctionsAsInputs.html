@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions As Input</title>
+    <script>
+        function foo(number) {
+            return number < 50;
+        }
+        function demo() {
+            console.log("Starting...");
+            var myarray = [10,20,30,40,50,60,70,80,90];
+            var results1 = myarray.filter(foo);
+            var results2 = myarray.filter(function (number) { return number > 50 });
+            var results3 = myarray.filter(function (number) { number => number > 50 });
+            console.log(results1);
+            console.log(results2);
+            console.log(results3);
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

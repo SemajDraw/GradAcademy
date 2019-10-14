@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parameters Are Terrible</title>
+    <script>
+        function myFunc(foo, bar, zed) {
+            console.log(foo);
+            console.log(bar);
+            console.log(zed);
+            if(arguments.length > myFunc.length) {
+                console.log("---- Extra Arguments ----");
+                var sliceFunc = Array.prototype.slice;
+                var extraArgs = sliceFunc.apply(arguments, [myFunc.length]);
+                for (var i = 0; i < extraArgs.length; i++) {
+                    console.log(extraArgs[i]);
+                }
+            }
+            console.log("----------");
+        }
+        function demo() {
+            console.log("Starting...");
+            myFunc();
+            myFunc("ab");
+            myFunc("ab","cd");
+            myFunc("ab","cd","ef");
+            myFunc("ab","cd","ef","gh");
+            myFunc("ab","cd","ef","gh","ij");
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

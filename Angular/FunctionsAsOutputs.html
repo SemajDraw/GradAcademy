@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions As Outputs</title>
+    <script>
+        function wrapInH1(name) {
+            return "<h1>" + name + "</h1>";
+        }
+        // Procedural Solution
+        function wrapInTag(tagName, name) {
+            var openingTag = '<' + tagName + '>';
+            var closingTag = '</' + tagName + '>';
+            return openingTag + name + closingTag;
+        }
+
+        // Functional Solution
+        function buildWrapper(tagName) {
+            var openingTag = '<' + tagName + '>';
+            var closingTag = '</' + tagName + '>';
+            return function (name) {
+                return openingTag + name + closingTag;
+            }
+        }
+        function demo() {
+            document.write(wrapInH1("Homer"));
+            document.write(wrapInH1("Marge"));
+            document.write(wrapInTag("h3", "Bart"));
+
+            var wrapInMark = buildWrapper("mark");
+            document.write(wrapInMark("Lisa"));
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>
