@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Are First Class Citizens</title>
+    <script>
+        function foo() {
+            return 7;
+        }
+        // Basic functional programming, JavaScript is a functional language
+        function demo() {
+            console.log("Starting...");
+            console.log(foo());
+            console.log(foo);
+            var x = foo();
+            var y = foo;
+            var z = y();
+            console.log(x);
+            console.log(z);
+            console.log(foo);
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype Based OO</title>
+    <script>
+        function demo() {
+            // Prototype based OO
+            // Clone an existing object and then clone or change the values in it
+            // There is only one way to define a function in JavaScript
+            // The way a function behaves depends on the way it is called
+            // Calling a function with new passes in a blank object new makes
+            // the call to make th new object which is passed in
+            function Person(name,age,salary) {
+                this.name = name;
+                this.age = age;
+                this.salary = salary;
+            }
+
+            // Object literal syntax
+            var person1 =  {
+                name: "Jane",
+                age: 27,
+                salary: 3000.00
+            };
+
+            // Unnecesarily verbose, not really done
+            var person2 = new Object();
+            person2.name = "Jane";
+            person2.age = 27;
+            person2.salary = 30000.00;
+
+            // Constructor function syntax
+            var person3 = new Person("Jane", 27, 30000.0);
+            console.log(person1);
+            console.log(person2);
+            console.log(person3);
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

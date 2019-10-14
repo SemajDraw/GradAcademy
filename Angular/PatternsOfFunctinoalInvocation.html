@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patterns of Functional Invoation</title>
+    <script>
+        var foo = "qwerty";
+        function myFunc() {
+            console.log(this.foo);
+            this.bar = 123;
+        }
+        myFunc.prototype = { foo: "Hot Chocolate" };
+        function demo() {
+            console.log("Standard Invocation");
+            myFunc();
+            console.log(bar);
+
+            console.log("Method Invocation");
+            var obj1 = { foo: "coffee" };
+            obj1.myMethod = myFunc;
+            obj1.myMethod();
+            console.log(obj1.bar);
+
+            console.log("Invocation via 'apply'");
+            var obj2 = { foo: "tea" };
+            myFunc.apply(obj2, []);
+            console.log(obj2.bar);
+
+            console.log("Constructor Invocation");
+            var obj3 = new myFunc();
+            console.log(obj3.bar);
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

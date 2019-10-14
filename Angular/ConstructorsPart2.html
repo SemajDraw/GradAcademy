@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructor Part2</title>
+    <script>
+        function Employee(name, age, salary) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+        }
+        Employee.prototype.toString = function() {
+            return this.name + "is " + this.age + " and he earns " + this.salary;
+        };
+        Employee.prototype.calcSalary = function() {
+            return this.salary / 12;
+        };
+        Employee.prototype.awardBonus = function(bonus) {
+            return this.salary += bonus;
+        };
+
+        function demo() {
+            console.log("Starting...");
+            var emp1 = new Employee("James", 27, 37500.00);
+            var emp2 = new Employee("Mary", 29, 37500.00)
+            console.log(emp1.toString());
+            emp1.calcSalary();
+            console.log(emp1.toString());
+            emp1.awardBonus(500.00);
+            console.log(emp1.toString());
+            emp1.calcSalary();
+            console.log(emp1);
+            console.log(emp2)
+
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

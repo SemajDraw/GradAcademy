@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays Are Terrible</title>
+    <script>
+        function printArray(inputArray) {
+            for (var i = 0; i < inputArray.length; i++) {
+                console.log(inputArray[i]);
+            }
+
+        }
+        function demo() {
+            var myArray1 = new Array(7);
+            console.log("First Array...");
+            printArray(myArray1);
+
+            var myArray2 = new Array(7, 8);
+            console.log("My Second Array...");
+            printArray(myArray2);
+
+            var myArray3 = [7,8,9];
+            console.log("My Second Array...");
+            printArray(myArray3);
+
+            // Add to the end of the array
+            myArray3.push(12345);
+            // Add to the start of the array
+            myArray3.unshift(54321);
+            console.log("My Second Array Again...");
+            printArray(myArray3);
+
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>

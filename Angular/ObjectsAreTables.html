@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects Are Tables</title>
+    <script>
+        function demo() {
+            console.log("Starting...");
+            // In JavaScript on Object and a Table are the same thing
+            var thing = {
+                name: "Bane",
+                age: 27,
+                salary: 40000.00,
+                calcSalary: function() { return this.salary/12}
+            };
+            // Property syntax
+            console.log(thing.name);
+            console.log(thing.calcSalary());
+            // Table syntax
+            console.log(thing['name']);
+            console.log(thing['calcSalary']());
+        }
+    </script>
+</head>
+<body onload="demo()">
+
+</body>
+</html>
