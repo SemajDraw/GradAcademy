@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+ import {Component, OnInit} from '@angular/core';
 import {Quote} from '../../model/quote';
 import {HttpClient} from '@angular/common/http';
 
@@ -25,5 +25,10 @@ export class QuotesEditorComponent {
       text: this.newText,
       source: this.newSource
     });
+  }
+
+  deleteLastTwo() {
+    this.quotations.pop();
+    this.quotations.pop();
   }
 }
