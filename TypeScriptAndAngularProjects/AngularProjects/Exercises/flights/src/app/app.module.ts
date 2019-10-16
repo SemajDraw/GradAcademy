@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {FlightViewerComponent} from './components/flight-viewer/flight-viewer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlightViewerRowComponent } from './components/flight-viewer-row/flight-viewer-row.component';
+import {FlightsService} from './services/flights.service';
+import {FlightsRestService} from './services/flights-rest.service';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { FlightViewerRowComponent } from './components/flight-viewer-row/flight-
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: FlightsService, useClass: FlightsRestService}
+  ],
   bootstrap: [
     FlightViewerComponent
   ]

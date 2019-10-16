@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Flight } from '../../model/flight';
 import {pipe} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {FlightsService} from '../../services/flights.service';
 
 @Component({
   selector: 'app-flight-viewer',
@@ -15,17 +16,10 @@ export class FlightViewerComponent implements OnInit {
   flights: Flight[];
 
   ngOnInit(): void {
+    this.flightsService.getAllFlights()
+      .subscribe(flights => this.flights = flights);
   }
 
-  constructor(private http: HttpClient) {
-    this.http.get<Flight[]>('http://localhost:8090/flights')
-      .pipe(map(jsonArray =>
-        jsonArray.map(flight => new Flight(
-          flight.number,
-          flight.origin,
-          flight.destination,
-          flight.departure,
-          flight.arrival))))
-      .subscribe(data => this.flights = data);
-  }
+  constructor(private flightsService: FlightsService) { }
+
 }
